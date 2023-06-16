@@ -3,7 +3,22 @@
   color: white;
 }
 
+.grain-effect {
+  animation: grain-animation 1s infinite linear;
+}
+
+@keyframes grain-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 200%; /* Increase the value for a faster and more intense effect */
+  }
+}
+
 .container {
+  position: relative; /* Add position relative */
+  z-index: 1; /* Set a higher z-index value */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
@@ -15,6 +30,22 @@
     "header"
     "content"
     "footer";
+  background-color: transparent; /* Set the container background color to transparent */
+}
+
+.container,
+.header,
+.content,
+.footer {
+  background-color: transparent !important; /* Set the background color to transparent using !important */
+}
+
+.header,
+.content,
+.footer {
+  position: relative; /* Add position relative */
+  z-index: 2; /* Set a lower z-index value */
+  background-color: transparent; /* Set the background color of each section to transparent */
 }
 
 html {
@@ -23,9 +54,10 @@ html {
   justify-content: center;
   align-items: center;
   box-sizing: border-box; /* Include border and padding in the element's total width and height */
-  border: 2px solid #e6d51c; /* Add a white border around the HTML page */
+  border: 2px solid #89da34; /* Add a white border around the HTML page */
   padding: 2px; /* Add padding to ensure the border is visible without adding extra space */
   margin: 0; /* Remove any default margin */
+  position: relative; /* Add position relative */
 }
 
 
@@ -48,6 +80,7 @@ html {
   text-align: left; /* Align heading text to the left */
   display: inline-block; /* Change display to inline-block */
   padding-left: 20px;
+  background-color: transparent; /* Set the background color of each section to transparent */
 }
 
 
@@ -73,23 +106,27 @@ html {
 }
 
 .text-box {
+  position: relative; /* Add position relative */
+  z-index: 2; /* Set a lower z-index value */
   width: 300px; /* Adjust the width as desired */
   height: 50px; /* Adjust the height as desired */
   border-radius: 7px;
   /* border-color: #d1ca82; */
-  border-color: #e6d51c;
+  border-color: #89da34;
   outline: none; /* Remove the outline style */
   background-color: #111512; /* Set the background color */
   transition: border-color .5s; /* Add transition property for border-color */
   padding-left: 20px;
   padding-right: 20px;
   font-size: 15px;
-  margin-left: 20px;
-  margin-right: 20px;
+  /* margin-left: 20px;
+  margin-right: 20px; */
   color: white;
+  background-color: transparent; /* Set the background color of each section to transparent */
 }
 
 
 .character-counter-container p {
   font-size: 12px; /* Adjust the font size as desired */
+  background-color: transparent; /* Set the background color of each section to transparent */
 }
